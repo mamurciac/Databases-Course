@@ -1,3 +1,5 @@
+#Ejercicio 1: Comandos basicos
+
 #Se muestra una lista de las bases de datos disponibles
 show databases;
 
@@ -18,6 +20,9 @@ select first_name from actor;
 
 #Se realiza una consulta en la cual se muestra toda la informacion de tabla actor pero proyectando solo las columna del id, primer y segundo nombre del actor
 select actor_id, first_name, last_name from actor;
+
+
+#Ejercicio 2: Creacion y borrado de tablas en MySQL
 
 #Se crea una nueva base de datos (Esto se hace si no existe la base de datos db1)
 create schema if not exists db1;
@@ -41,6 +46,9 @@ show tables;
 show columns from agenda;
 describe agenda;
 
+
+#Ejercicio 3: Insercion de registros (Poblado de tablas) en MySQL
+
 #Se agregan registros en la tabla agenda; al indicarse en su orden los valores de todos los campos, tambien se puede hacer estas inserciones sin indicar explicitamente los valores campos que se indican al agregar cada registro, de la siguiente forma:
 #	insert into agenda values (<NOMBRE>, <APELLIDO>, <TELEFONO>, <NACIMIENTO>, <ESTATURA>);
 insert into agenda(nombre, apellido, telefono, nacimiento, estatura) values ('Juan', 'Ríos', 2309876, 1990, 1.70);
@@ -59,11 +67,29 @@ insert into agenda(nombre, apellido, telefono, nacimiento, estatura) values ('Ma
 #Se realiza una consulta en la cual se muestra toda la informacion de tabla agenda
 select * from agenda;
 
+
+#Ejercicio 4: Eliminacion de registros en MySQL
+
 #Se van a eliminar de la tabla agenda los registros en los cuales el año de nacimiento sea antes de 1980
 delete from agenda where nacimiento < 1980;
 
 #Se van a eliminar de la tabla agenda los registros en los cuales la estatura sea de al menos 1.75
 delete from agenda where estatura >= 1.75;
+
+
+#Ejercicio 5: Consultas basicas en MySQL
+
+SELECT * FROM agenda;
+SELECT nombre, apellido FROM agenda;
+SELECT telefono FROM agenda WHERE apellido='Gonzalez';
+SELECT nombre FROM agenda WHERE nacimiento = 1983;
+SELECT DISTINCT nombre FROM agenda;
+SELECT nombre FROM agenda WHERE apellido='Rios' OR apellido='Gonzalez';
+SELECT nombre FROM agenda WHERE apellido='Rios' AND nacimiento = 1983;
+SELECT apellido FROM agenda WHERE apellido LIKE 'P%';
+
+
+
 
 #Se van a eliminar de la tabla agenda todos los registros, esto no elimina la tabla, deja la tabla vacia, es decir deja la tabla pero sin ningun registro
 delete from agenda;
