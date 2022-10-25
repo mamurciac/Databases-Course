@@ -9,3 +9,8 @@ show tables;
 
 #Se muestra la estructura y descripcion de los campos de una tabla dada (En este caso, de la tabla actor, la cual esta almacenada en la base de datos sakila)
 describe actor;
+
+#Se 
+select * from actor;
+
+select first_name from actor;
