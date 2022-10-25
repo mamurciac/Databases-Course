@@ -51,6 +51,8 @@ insert into agenda(nombre, apellido, telefono, nacimiento, estatura) values ('Cr
 insert into agenda(nombre, apellido, telefono, nacimiento, estatura) values ('María', 'Contreras', 2456871, 1982, 1.70);
 insert into agenda(nombre, apellido, telefono, nacimiento, estatura) values ('Marta', 'Suárez', 2956870, 1987, 1.65);
 
+select * from agenda;
+
 delete from agenda where nacimiento < 1980;
 
 delete from agenda where estatura <= 1.70;
